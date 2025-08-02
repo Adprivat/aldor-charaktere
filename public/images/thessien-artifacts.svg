@@ -1,0 +1,64 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="artifactGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E1B4B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4338CA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    <filter id="artifactGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="crystalGradient" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#A855F7;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#3B82F6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1E293B;stop-opacity:0.6" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#artifactGradient)"/>
+  
+  <!-- Central Crystal/Orb -->
+  <circle cx="400" cy="300" r="80" fill="url(#crystalGradient)" filter="url(#artifactGlow)"/>
+  <circle cx="400" cy="300" r="60" fill="none" stroke="#E2E8F0" stroke-width="2" opacity="0.6"/>
+  <circle cx="400" cy="300" r="40" fill="none" stroke="#A855F7" stroke-width="1" opacity="0.8"/>
+  
+  <!-- Staff -->
+  <rect x="395" y="150" width="10" height="300" fill="#8B5CF6" opacity="0.8"/>
+  <ellipse cx="400" cy="140" rx="20" ry="30" fill="#A855F7" filter="url(#artifactGlow)"/>
+  <polygon points="400,120 380,140 420,140" fill="#E2E8F0" opacity="0.9"/>
+  
+  <!-- Floating Artifacts -->
+  <rect x="200" y="200" width="40" height="60" rx="5" fill="#3B82F6" opacity="0.7" transform="rotate(15 220 230)"/>
+  <circle cx="600" cy="250" r="25" fill="#8B5CF6" opacity="0.7"/>
+  <polygon points="150,350 170,320 190,350 170,380" fill="#A855F7" opacity="0.7"/>
+  <rect x="580" y="380" width="50" height="30" rx="15" fill="#3B82F6" opacity="0.7" transform="rotate(-10 605 395)"/>
+  
+  <!-- Runic Circles -->
+  <circle cx="250" cy="150" r="40" fill="none" stroke="#8B5CF6" stroke-width="2" opacity="0.6"/>
+  <circle cx="550" cy="450" r="35" fill="none" stroke="#3B82F6" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Runic Text -->
+  <text x="250" y="160" text-anchor="middle" font-family="serif" font-size="28" fill="#A855F7" opacity="0.8">ᚦᚱᚢ</text>
+  <text x="550" y="460" text-anchor="middle" font-family="serif" font-size="24" fill="#3B82F6" opacity="0.8">ᛜᛟᛞ</text>
+  
+  <!-- Energy Lines -->
+  <line x1="400" y1="220" x2="250" y2="150" stroke="#8B5CF6" stroke-width="2" opacity="0.5"/>
+  <line x1="400" y1="380" x2="550" y2="450" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  <line x1="320" y1="300" x2="200" y2="230" stroke="#A855F7" stroke-width="1" opacity="0.4"/>
+  <line x1="480" y1="300" x2="600" y2="250" stroke="#3B82F6" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Sparkles -->
+  <circle cx="300" cy="100" r="3" fill="#E2E8F0" opacity="0.9"/>
+  <circle cx="500" cy="120" r="2" fill="#A855F7" opacity="0.9"/>
+  <circle cx="680" cy="180" r="2.5" fill="#3B82F6" opacity="0.9"/>
+  <circle cx="120" cy="280" r="2" fill="#8B5CF6" opacity="0.9"/>
+  
+  <!-- Title -->
+  <text x="400" y="80" text-anchor="middle" font-family="serif" font-size="32" fill="#E2E8F0" font-weight="bold">Mystische Artefakte</text>
+  <text x="400" y="115" text-anchor="middle" font-family="serif" font-size="18" fill="#94A3B8">Sammlung mächtiger Relikte</text>
+</svg>

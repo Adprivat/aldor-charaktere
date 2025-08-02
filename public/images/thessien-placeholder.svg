@@ -1,0 +1,61 @@
+<!-- SVG Placeholder für Thessien -->
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#3b47f5" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#8e45f7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="robe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c5af7"/>
+      <stop offset="50%" stop-color="#3b47f5"/>
+      <stop offset="100%" stop-color="#2d1d69"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+  
+  <!-- Magic Circles -->
+  <circle cx="400" cy="400" r="350" fill="none" stroke="#8e45f7" stroke-width="2" opacity="0.3"/>
+  <circle cx="400" cy="400" r="300" fill="none" stroke="#3b47f5" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Character Silhouette -->
+  <g transform="translate(400,200)">
+    <!-- Head -->
+    <circle cx="0" cy="0" r="60" fill="#4a5568"/>
+    <!-- Hood -->
+    <path d="M -80,-40 Q 0,-100 80,-40 Q 0,-20 -80,-40" fill="url(#robe)"/>
+    
+    <!-- Body/Robe -->
+    <path d="M -80,40 Q -100,200 -60,400 L -40,580 Q 0,600 40,580 L 60,400 Q 100,200 80,40 Q 0,20 -80,40" fill="url(#robe)"/>
+    
+    <!-- Arms -->
+    <ellipse cx="-90" cy="200" rx="25" ry="80" fill="url(#robe)"/>
+    <ellipse cx="90" cy="200" rx="25" ry="80" fill="url(#robe)"/>
+    
+    <!-- Staff -->
+    <rect x="120" y="100" width="8" height="200" fill="#ffd700"/>
+    <circle cx="124" cy="90" r="15" fill="#8e45f7"/>
+  </g>
+  
+  <!-- Magical Effects -->
+  <g opacity="0.6">
+    <circle cx="200" cy="150" r="3" fill="#8e45f7">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="200" r="2" fill="#3b47f5">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="400" r="4" fill="#7c5af7">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="500" r="3" fill="#8e45f7">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="750" text-anchor="middle" fill="#8e45f7" font-family="serif" font-size="32" font-weight="bold">Thessien der Wanderer</text>
+  <text x="400" y="780" text-anchor="middle" fill="#3b47f5" font-family="serif" font-size="18">Erzmagier des Kirin Tor</text>
+</svg>
