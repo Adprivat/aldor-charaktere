@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import SimpleBeledarCrystal3D from './SimpleBeledarCrystal3D';
 
 const HeroSection: React.FC = () => {
   const { scrollY } = useScroll();
@@ -15,16 +14,6 @@ const HeroSection: React.FC = () => {
         style={{ y }}
       />
       
-      {/* Beledar Crystal - 3D */}
-      <motion.div
-        className="absolute top-1/4 right-1/4 w-32 h-32 opacity-90"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 0.9, scale: 1 }}
-        transition={{ duration: 2, delay: 0.5 }}
-      >
-        <SimpleBeledarCrystal3D height="128px" />
-      </motion.div>
-
       {/* Floating Tiny Sparks */}
       {[...Array(8)].map((_, i) => (
         <motion.div
@@ -66,7 +55,7 @@ const HeroSection: React.FC = () => {
           <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-b from-flame-gold via-ember to-crimson p-1 animate-glow">
             <div className="w-full h-full rounded-full bg-lavastone flex items-center justify-center relative overflow-hidden">
               {/* Profile Image */}                <img 
-                  src={`${process.env.PUBLIC_URL}/pcomic.jpg`}
+                  src="/images/pcomic.jpg"
                 alt="Mereldar Glutspeer Portrait"
                 className="w-full h-full object-cover rounded-full"
                 style={{

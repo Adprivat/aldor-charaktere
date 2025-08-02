@@ -46,6 +46,7 @@ export default function MereldarPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
+          className="pt-16"
         >
           <HeroSection />
           <AboutSection />
