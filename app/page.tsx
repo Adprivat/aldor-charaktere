@@ -32,6 +32,15 @@ export default function HomePage() {
       image: '/SerranPortrait.png', // updated
       theme: 'bg-gradient-to-br from-mystic-600 to-arcane-600',
       textColor: 'text-mystic-300'
+    },
+    {
+      id: 'weslej',
+      name: 'Sir Weslej Eichbaum',
+      title: 'Templer der Kirche des Lichts',
+      description: 'Ritterlicher Richter des Lichts – halb Krieger, halb Inquisitor.',
+      image: '/WeslejPortrait.png',
+      theme: 'bg-gradient-to-br from-void-800 to-flame-600',
+      textColor: 'text-flame-gold'
     }
   ]
 
