@@ -14,6 +14,7 @@ import Artifacts from '../../../components/thessien/Artifacts';
 import Connections from '../../../components/thessien/Connections';
 import Navigation from '../../../components/thessien/Navigation';
 import FloatingRunes from '../../../components/thessien/FloatingRunes';
+import BackToCharactersButton from '../../../components/shared/BackToCharactersButton'
 
 export default function ThessienPage() {
 
@@ -32,6 +33,15 @@ export default function ThessienPage() {
           </motion.button>
         </Link>
       </div>
+
+      <BackToCharactersButton
+        color={{
+          bg: 'bg-arcane-800/20',
+          hoverBg: 'hover:bg-arcane-700/30',
+          border: 'border border-arcane-400/30',
+          text: 'text-arcane-300'
+        }}
+      />
 
       {/* Floating Runes Background Effect */}
       <FloatingRunes />

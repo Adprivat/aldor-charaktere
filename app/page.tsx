@@ -23,6 +23,15 @@ export default function HomePage() {
       image: '/images/thessien.jpg',
       theme: 'bg-gradient-to-br from-arcane-600 to-mystic-600',
       textColor: 'text-arcane-300'
+    },
+    {
+      id: 'serran',
+      name: 'Serran Vesperan',
+      title: 'Lehrling des Arkanen',
+      description: 'Eine junge Elfe auf der Suche nach den Geheimnissen der Magie.',
+      image: '/SerranPortrait.png', // updated
+      theme: 'bg-gradient-to-br from-mystic-600 to-arcane-600',
+      textColor: 'text-mystic-300'
     }
   ]
 
@@ -148,7 +157,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="py-12 text-center text-void-500">
-        <p>&copy; 2025  Alle Charaktere sind Eigentum ihrer Spieler.</p>
+        <p>&copy; 2025 Aldor Rollenspielgruppe. Alle Charaktere sind Eigentum ihrer Spieler.</p>
       </footer>
     </div>
   )

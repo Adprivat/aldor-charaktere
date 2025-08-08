@@ -18,6 +18,7 @@ import ScrollProgress from '../../../components/mereldar/ScrollProgress';
 import LoadingScreen from '../../../components/mereldar/LoadingScreen';
 import CursorTrail from '../../../components/mereldar/CursorTrail';
 import { ThemeProvider } from '../../../components/mereldar/contexts/ThemeContext';
+import BackToCharactersButton from '../../../components/shared/BackToCharactersButton'
 
 export default function MereldarPage() {
   return (
@@ -36,6 +37,15 @@ export default function MereldarPage() {
             </motion.button>
           </Link>
         </div>
+
+        <BackToCharactersButton
+          color={{
+            bg: 'bg-ember/20',
+            hoverBg: 'hover:bg-ember/30',
+            border: 'border border-flame-gold/30',
+            text: 'text-flame-gold'
+          }}
+        />
 
         <LoadingScreen />
         <CursorTrail color="#ffa726" size={6} trailLength={12} />
