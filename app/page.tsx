@@ -3,46 +3,10 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Users, Sparkles, Sword, Crown } from 'lucide-react'
+import { characters } from '@/data/characters'
 
 export default function HomePage() {
-  const characters = [
-    {
-      id: 'mereldar',
-      name: 'Mereldar Glutspeer',
-      title: 'Kommandantin • Lampenanzünderin',
-      description: 'Arathische Kriegerin und Führerin, die den Wandel ihrer Kultur verkörpert.',
-      image: '/images/Kommandantin.jpg',
-      theme: 'bg-gradient-to-br from-ember to-flame-gold',
-      textColor: 'text-flame-gold'
-    },
-    {
-      id: 'thessien',
-      name: 'Thessien der Wanderer',
-      title: 'Erzmagier der Kirin Tor',
-      description: 'Mächtiger Magier, spezialisiert auf Zeitmagie und arkane Künste.',
-      image: '/images/thessien.jpg',
-      theme: 'bg-gradient-to-br from-arcane-600 to-mystic-600',
-      textColor: 'text-arcane-300'
-    },
-    {
-      id: 'serran',
-      name: 'Serran Vesperan',
-      title: 'Lehrling des Arkanen',
-      description: 'Eine junge Elfe auf der Suche nach den Geheimnissen der Magie.',
-      image: '/SerranPortrait.png', // updated
-      theme: 'bg-gradient-to-br from-mystic-600 to-arcane-600',
-      textColor: 'text-mystic-300'
-    },
-    {
-      id: 'weslej',
-      name: 'Sir Weslej Eichbaum',
-      title: 'Templer der Kirche des Lichts',
-      description: 'Ritterlicher Richter des Lichts – halb Krieger, halb Inquisitor.',
-      image: '/WeslejPortrait.png',
-      theme: 'bg-gradient-to-br from-void-800 to-flame-600',
-      textColor: 'text-flame-gold'
-    }
-  ]
+  // Charakterdaten kommen jetzt aus zentraler Datei
 
   return (
     <div className="min-h-screen bg-void-900 text-void-100">
@@ -117,7 +81,10 @@ export default function HomePage() {
                 className="group"
               >
                 <Link href={`/charaktere/${character.id}`}>
-                  <div className="fantasy-card group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                  <div
+                    className="fantasy-card group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                    data-character={character.id}
+                  >
                     {/* Character Image */}
                     <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
                       <img 

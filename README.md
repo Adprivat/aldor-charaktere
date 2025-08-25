@@ -97,10 +97,11 @@ aldor-charaktere/
 
 Um einen neuen Charakter hinzuzufügen:
 
-1. **Charakterdaten:** Füge den Charakter zur `characters` Liste in `app/page.tsx` hinzu
-2. **Profilseite:** Erstelle eine neue Seite unter `app/charaktere/[charaktername]/page.tsx`
-3. **Assets:** Füge Bilder unter `public/images/` hinzu
-4. **Farben:** Erweitere die Farbpalette in `tailwind.config.js` wenn nötig
+1. **Charakterdaten:** Füge den Charakter zur zentralen Liste in `data/characters.ts` hinzu (mit Basis-Karteninfos)
+2. **Theme:** Ergänze/oder passe das Theme im Registry `themes/characterThemes.ts` an (Hintergrund, Text, Back-Button, Akzente)
+3. **Profilseite:** Erstelle entweder individuelle Komponenten unter `components/<name>/` und eine Seite `app/charaktere/<name>/page.tsx` ODER nutze die dynamische Route `app/charaktere/[id]`
+4. **Assets:** Lege Bilder unter `public/images/` ab (einheitliche Pfade)
+5. **Farben:** Falls neue Farbtöne nötig sind, erweitere `tailwind.config.js` (ggf. auch Safelist für dynamische Klassen)
 
 ## 🎨 Design-System
 
@@ -111,6 +112,17 @@ Um einen neuen Charakter hinzuzufügen:
 - **Flame:** Warme Feuer-Töne (#7c2d12 bis #fff7ed)
 
 ### Schriftarten
+### Theme-Registry
+
+Die pro-Charakter-Stilistik ist zentral in `themes/characterThemes.ts` definiert. Ein Eintrag enthält:
+```
+background: Klassen für Seitenhintergrund (z.B. Gradient)
+text: Primäre Textfarbe
+panel (optional): Zusatzklasse für Karten/Paneels
+glowColor (optional): Basisfarbe für Partikel/Glühen
+backButton: { container, hover, border, text }
+```
+Die Landing Page nutzt weiterhin vereinfachte Felder `theme` und `textColor` für Karten. Detailseiten ziehen konsistent Werte aus `pageTheme`.
 - **Fantasy:** Cinzel (für Überschriften)
 - **Elegant:** Libre Caslon Text (für Untertitel)
 - **Modern:** Raleway (für Fließtext)

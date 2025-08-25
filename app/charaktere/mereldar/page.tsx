@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import CharacterLayout from '../../../components/shared/CharacterLayout';
+import { getCharacterById } from '@/data/characters';
 
 // Mereldar-spezifische Komponenten
 import HeroSection from '../../../components/mereldar/HeroSection';
@@ -18,35 +18,23 @@ import ScrollProgress from '../../../components/mereldar/ScrollProgress';
 import LoadingScreen from '../../../components/mereldar/LoadingScreen';
 import CursorTrail from '../../../components/mereldar/CursorTrail';
 import { ThemeProvider } from '../../../components/mereldar/contexts/ThemeContext';
-import BackToCharactersButton from '../../../components/shared/BackToCharactersButton'
+// Back button now handled by CharacterLayout
 
 export default function MereldarPage() {
+  const character = getCharacterById('mereldar');
+  const theme = character?.pageTheme;
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-obsidian text-divine-light overflow-x-hidden">
-        {/* Zurück-Button */}
-        <div className="fixed top-4 left-4 z-50">
-          <Link href="/">
-            <motion.button
-              className="flex items-center gap-2 px-4 py-2 bg-ember/20 hover:bg-ember/30 border border-flame-gold/30 rounded-lg backdrop-blur-sm transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowLeft className="w-4 h-4 text-flame-gold" />
-              <span className="text-flame-gold font-medium">Zurück</span>
-            </motion.button>
-          </Link>
-        </div>
-
-        <BackToCharactersButton
-          color={{
-            bg: 'bg-ember/20',
-            hoverBg: 'hover:bg-ember/30',
-            border: 'border border-flame-gold/30',
-            text: 'text-flame-gold'
-          }}
-        />
-
+      <CharacterLayout
+        backgroundClassName={theme?.background || 'bg-obsidian'}
+        textClassName={theme?.text || 'text-divine-light'}
+        backColor={theme?.backButton || {
+          container: 'bg-ember/20',
+          hover: 'hover:bg-ember/30',
+          border: 'border-flame-gold/30',
+          text: 'text-flame-gold'
+        }}
+      >
         <LoadingScreen />
         <CursorTrail color="#ffa726" size={6} trailLength={12} />
         <ParticleBackground />
@@ -67,7 +55,7 @@ export default function MereldarPage() {
         
         <Footer />
         <ScrollProgress />
-      </div>
+      </CharacterLayout>
     </ThemeProvider>
   );
 }

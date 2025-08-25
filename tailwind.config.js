@@ -5,6 +5,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    // dynamic timeline marker/background/text colors used via template strings
+    'bg-flame-gold','bg-ember','bg-crimson','bg-crystal-blue','bg-mystic-gold',
+    'text-flame-gold','text-ember','text-crimson','text-crystal-blue','text-mystic-gold'
+  ],
   theme: {
     extend: {
       colors: {
