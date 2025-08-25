@@ -6,6 +6,7 @@ import { Menu } from 'lucide-react';
 const sections = [
   { id: 'hero', label: 'Magister' },
   { id: 'erscheinung', label: 'Erscheinung' },
+  { id: 'werkstatt', label: 'Werkstatt' },
   { id: 'anwesen', label: 'Anwesen' },
   { id: 'reichtum', label: 'Wohlstand' },
   { id: 'beziehungen', label: 'Serran' },
