@@ -4,8 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Users, Sparkles, Sword, Crown } from 'lucide-react'
 import { characters } from '@/data/characters'
-
-const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
+import { asset } from '@/utils/asset'
 
 export default function HomePage() {
   // Charakterdaten kommen jetzt aus zentraler Datei
@@ -90,7 +89,7 @@ export default function HomePage() {
                     {/* Character Image */}
                     <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
                       <img 
-                        src={bp ? `${bp}${character.image}` : character.image} 
+                        src={asset(character.image)} 
                         alt={character.name}
                         className="w-full h-full object-cover object-center"
                         onError={(e) => {

@@ -1,7 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
+import { asset } from '@/utils/asset';
 import Parallax from './Parallax';
 
 export default function RelationshipSection() {
@@ -18,7 +18,7 @@ export default function RelationshipSection() {
           <motion.div initial={{opacity:0,x:50}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.6}} className="relative">
             <Parallax distance={70}>
               <div className="rounded-xl overflow-hidden ring-2 ring-amber-500/30 shadow-lg shadow-red-900/40">
-                <Image src={bp + '/SarelanSerran.png'} alt="Symbolische Bindung" width={600} height={360} className="object-cover w-full h-full" />
+                    <Image src={asset('/images/SarelanSerran.png')} alt="Symbolische Bindung" width={600} height={360} className="object-cover w-full h-full" />
               </div>
             </Parallax>
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-red-600/30 via-amber-500/20 to-transparent blur-2xl" />

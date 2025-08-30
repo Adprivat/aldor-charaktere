@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
+import { asset } from '@/utils/asset';
 
 interface Ally {
   name: string;
@@ -142,7 +142,7 @@ const AlliesSection: React.FC = () => {
                 {ally.image ? (
                   <div className="w-20 h-20 mx-auto mb-2">
                     <img
-                      src={`${bp}/${ally.image}`}
+                      src={asset('/' + ally.image)}
                       alt={ally.name}
                       className="w-full h-full object-cover rounded-full border-2 border-ember"
                     />

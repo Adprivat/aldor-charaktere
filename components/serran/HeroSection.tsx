@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
+import { asset } from '@/utils/asset'
 
 export default function HeroSection() {
   return (
@@ -32,7 +32,7 @@ export default function HeroSection() {
           <div className="w-44 h-44 md:w-52 md:h-52 mx-auto rounded-full p-[3px] bg-gradient-to-br from-rose-400 via-rose-300 to-rose-200">
             <div className="w-full h-full rounded-full overflow-hidden bg-void-800">
               <img
-                src={bp + '/Serran.png'}
+                src={asset('/images/Serran.png')}
                 alt="Serran Portrait"
                 className="w-full h-full object-cover"
               />

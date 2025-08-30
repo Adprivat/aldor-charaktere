@@ -89,7 +89,7 @@ export default function Profile() {
 
         {/* Bilder */}
         <div className="mt-12 grid md:grid-cols-3 gap-6">
-          {[{src: '/weslej.png', alt: 'Weslej'}, {src: '/weslej2.png', alt: 'Weslej 2'}, {src: '/WeslejPortrait.png', alt: 'Portrait'}].map(img => (
+          {[{src: '/images/weslej.png', alt: 'Weslej'}, {src: '/images/weslej2.png', alt: 'Weslej 2'}, {src: '/images/WeslejPortrait.png', alt: 'Portrait'}].map(img => (
             <div
               key={img.src}
               className="rounded-lg border border-flame-400/20 bg-black/40 aspect-[16/10] flex items-center justify-center"

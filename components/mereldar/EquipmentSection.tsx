@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
+import { asset } from '@/utils/asset';
 
 interface EquipmentItem {
   name: string;
@@ -19,7 +19,7 @@ const EquipmentSection: React.FC = () => {
       description: "Ein Stück arathischer Schmiedekunst, bereits im Reich gefertigt. Die unzähligen Scharten zeigen die Spuren der Kämpfe. Die Flamme umspielt die Waffe und lodert vor Kraft.",
       rarity: "legendary",
       icon: "🔥",
-      image: "Glutspeer.png" // Bild aus dem public Ordner
+  image: "images/Glutspeer.png" // Bild aus images Ordner
     },
     {
       name: "Arathische Rüstung", 
@@ -27,7 +27,7 @@ const EquipmentSection: React.FC = () => {
       description: "Besticht durch Schlichtheit in den Farben des Imperiums. Beige und Rot, Platte trifft auf festes Leder und geweihten Stoff. Der Helm zeigt die Krone der Flamme.",
       rarity: "epic",
       icon: "🛡️",
-      image: "Ruestung.png" // Kein Bild - Emoji wird verwendet
+  image: "images/Ruestung.png" // Bild im images Ordner
     },
     {
       name: "Arathische Runen der Flamme",
@@ -59,7 +59,7 @@ const EquipmentSection: React.FC = () => {
       description: "Eine Phiole an einem Lederband, in ihr Sand. Eine Erinnerung, das Wissen - man kämpft nicht allein.",
       rarity: "rare",
       icon: "🔮",
-      image: "strand.png" // Kein Bild - Emoji wird verwendet
+  image: "images/strand.png" // Bild im images Ordner
     }
   ];
 
@@ -146,7 +146,7 @@ const EquipmentSection: React.FC = () => {
                 {/* Render image if available, otherwise emoji */}
                 {item.image ? (
                   <img
-                    src={`${bp}/${item.image}`}
+                    src={asset('/' + item.image)}
                     alt={item.name}
                     className="w-full h-full object-contain rounded-lg"
                   />

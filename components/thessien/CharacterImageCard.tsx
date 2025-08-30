@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { User, Star, Shield, Zap, Clock, Book, Maximize2, Square } from 'lucide-react'
 import Image from 'next/image'
-const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
+import { asset } from '@/utils/asset';
 
 const CharacterImageCard = () => {
   const [imageMode, setImageMode] = useState<'cover' | 'contain' | 'natural'>('contain') // Standard auf 'contain' geändert
@@ -56,7 +56,7 @@ const CharacterImageCard = () => {
           <div className="w-full h-full relative">
             {!imageError ? (
               <Image
-                src={bp + '/images/thessien-character.jpg'}
+                  src={asset('/images/thessien-character.jpg')}
                 alt="Thessien der Wanderer - Erzmagier des Kirin Tor"
                 fill={imageMode !== 'natural'}
                 width={imageMode === 'natural' ? 800 : undefined}
@@ -137,7 +137,7 @@ const CharacterImageCard = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={bp + '/images/thessien-character.jpg'}
+              src={asset('/images/thessien-character.jpg')}
               alt="Thessien der Wanderer - Vollbild"
               width={1200}
               height={800}

@@ -1,6 +1,6 @@
 import React from 'react';
-const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 import { motion } from 'framer-motion';
+import { asset } from '@/utils/asset';
 
 const AboutSection: React.FC = () => {
   const timelineEvents = [
@@ -97,7 +97,7 @@ const AboutSection: React.FC = () => {
               >
                 <div className="w-full h-full bg-lavastone rounded-lg flex items-center justify-center relative overflow-hidden">
                   <img 
-                    src={bp + '/Kommandantin.jpg'} 
+                    src={asset('/images/Kommandantin.jpg')} 
                     alt="Mereldar Glutspeer - Charakterportrait" 
                     className="w-full h-full object-cover rounded-lg"
                   />
@@ -242,7 +242,7 @@ const AboutSection: React.FC = () => {
                           viewport={{ once: true }}
                         >
                           <img 
-                            src={bp + '/' + event.imagePath}
+                            src={asset('/' + event.imagePath)}
                             alt={`${event.title} - Alter ${event.age}`}
                             className="w-full max-w-xs mx-auto rounded-lg border border-ember shadow-lg"
                           />

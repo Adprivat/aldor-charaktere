@@ -2,8 +2,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Landmark, BookLock, Trees, Eye } from 'lucide-react';
+import { asset } from '@/utils/asset';
 import Image from 'next/image';
-const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 import Parallax from './Parallax';
 
 const FULL_TEXT = `Einsam und zugleich erhaben erhebt sich Sarelan Feuersturms Anwesen im herbstlich getönten Waldland von Quel’Thalas, verborgen zwischen uralten Baumriesen, deren Blätter in feurigen Farben lodern wie das letzte Aufflammen eines Tages. Der Anblick des Anwesens wirkt, als sei es nicht erbaut, sondern aus der Essenz des Waldes selbst herausgewachsen – eine Symbiose aus Natur und elfischer Baukunst, von makelloser Harmonie und dennoch ehrfurchtgebietend in seiner Präsenz.
@@ -35,9 +35,9 @@ export default function EstateSection() {
         <motion.h2 initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}} className="font-cinzel text-4xl text-amber-300 mb-10 text-center">Anwesen von Quel’Thalas</motion.h2>
         <motion.div initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:true}} transition={{duration:0.8}} className="relative mb-16 rounded-xl overflow-hidden ring-1 ring-amber-500/30 shadow-xl shadow-red-900/40">
           <Parallax distance={90} className="relative block">
-            <div className="aspect-[16/7] w-full bg-[#2d0c0c]">
-              <Image
-                src={bp + '/anwesen.png'}
+            <div className="aspect-[16/7] w-full bg-[#2d0c0c] relative">
+        <Image
+          src={asset('/images/anwesen.png')}
                 alt="Sarelans abgeschiedenes Anwesen im Wald von Quel'Thalas"
                 fill
                 priority={false}

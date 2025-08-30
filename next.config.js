@@ -11,7 +11,7 @@ const nextConfig = {
   // Unterverzeichnis für längere Testphase
   basePath,
   assetPrefix: basePath ? basePath + '/' : '',
-  trailingSlash: true,
+  // trailingSlash removed to prevent potential dev CSS asset 404s; static export still works without it
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath
   }
