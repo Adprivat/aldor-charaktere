@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Sparkles, Crown, Zap } from 'lucide-react'
 import Image from 'next/image'
+const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 interface ParticleData {
   left: number
@@ -139,7 +140,7 @@ const HeroSection = () => {
               {/* Siegel Container */}
               <div className="w-20 h-20 rounded-full overflow-hidden relative z-[60] border-2 border-arcane-400/80 shadow-lg shadow-arcane-500/50 bg-black/20 backdrop-blur-sm">
                 <Image 
-                  src="/images/Siegel.jpg" 
+                  src={bp + '/images/Siegel.jpg'} 
                   alt="Thessien's Siegel" 
                   width={80} 
                   height={80} 

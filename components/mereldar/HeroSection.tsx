@@ -1,4 +1,5 @@
 import React from 'react';
+const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
@@ -54,8 +55,8 @@ const HeroSection: React.FC = () => {
         >
           <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-b from-flame-gold via-ember to-crimson p-1 animate-glow">
             <div className="w-full h-full rounded-full bg-lavastone flex items-center justify-center relative overflow-hidden">
-              {/* Profile Image */}                <img 
-                  src="/images/pcomic.jpg"
+        {/* Profile Image */}                <img 
+          src={bp + '/images/pcomic.jpg'}
                 alt="Mereldar Glutspeer Portrait"
                 className="w-full h-full object-cover rounded-full"
                 style={{

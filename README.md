@@ -161,3 +161,41 @@ Alle Charaktere sind Eigentum ihrer jeweiligen Spieler.
 ---
 
 *Erstellt mit ❤️ für die Aldor Rollenspielgruppe*
+
+## 🌐 Statischer Export (Hosting ohne Node Server)
+
+Das Projekt ist so konfiguriert, dass es vollständig statisch exportiert werden kann. In `next.config.js` ist `output: 'export'` gesetzt und `images.unoptimized = true`, wodurch kein Image-Optimizer / keine Node-Laufzeit benötigt wird.
+
+### Ablauf
+
+```powershell
+# Production Build + Export erzeugen
+npm run build
+
+# Ergebnis liegt im Ordner
+dir .\out
+```
+
+Den Inhalt von `out/` kannst du direkt auf jeden beliebigen Static Host laden (GitHub Pages, Netlify Drop, S3/CloudFront, nginx, Apache, lokaler USB-Stick, etc.).
+
+### Warum funktioniert das hier?
+
+- Alle Daten kommen aus statischen TS-Dateien (`data/characters.ts`, `themes/...`).
+- Die dynamische Route `app/charaktere/[id]/page.tsx` nutzt `generateStaticParams()` und erzeugt für jedes `id` eine fertige HTML-Datei beim Build.
+- Es gibt keine API Routes oder serverseitigen `fetch`-Aufrufe.
+- Keine serverseitigen Auth-Zustände oder Sessions.
+- Keine Middleware.
+
+### Grenzen
+
+Wenn du später Funktionen wie Formulare mit Server-Handling, API Routen, serverseitige Auth oder On-Demand-Rendering brauchst, reicht der statische Export nicht mehr – dann bräuchtest du wieder `next start` (Node) oder Edge Functions.
+
+### Lokale Vorschau (optional)
+
+```powershell
+npx serve out
+```
+
+Oder du öffnest einfach die `out/index.html` im Browser (manche History-PushState Routen funktionieren dann nur eingeschränkt; für diese Site unkritisch, da echte Dateien generiert werden).
+
+---

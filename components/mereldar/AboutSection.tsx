@@ -1,4 +1,5 @@
 import React from 'react';
+const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 import { motion } from 'framer-motion';
 
 const AboutSection: React.FC = () => {
@@ -15,7 +16,7 @@ const AboutSection: React.FC = () => {
       title: "Junge Erwachsene",
       description: "Geweiht in der heiligen Flamme. Der Drang nach Mehr erwacht und führt zum Dienst an der Waffe.",
       color: "ember",
-      imagePath: "/Foliant.png"
+      imagePath: "Foliant.png"
     },
     {
       age: "21-24",
@@ -36,28 +37,28 @@ const AboutSection: React.FC = () => {
       title: "Eine neue Heimat",
       description: "Nach dem Absturz in Heilsturz gestrandet. Aufbau der neuen Arathi-Siedlung unter Beledar.",
       color: "ember",
-      imagePath: '/Glutspeer28.jpg'
+      imagePath: 'Glutspeer28.jpg'
     },
     {
       age: "32",
       title: "Der Tag der Dunkelheit",
       description: "Beledar verschiebt sich in die Leere. Aufstieg zur Lampenanzünderin - geschaffen für den Kampf gegen die Dunkelheit.",
       color: "crystal-blue",
-      imagePath: '/Neruber.png'
+      imagePath: 'Neruber.png'
     },
     {
       age: "37",
       title: "Kommandantin",
       description: "Aufstieg zur Speerspitze von Arathis Speer. Führung der Einheit in den dunkelsten Stunden.",
       color: "flame-gold",
-      imagePath: '/Kommandantin.jpg'
+      imagePath: 'Kommandantin.jpg'
     },
     {
       age: "38",
       title: "Neue Bündnisse",
       description: "Freundschaften mit Fremden, besonders ein Band zu einem Kirin Tor Magier. Adoption der Tochter Tilda.",
       color: "mystic-gold",
-      imagePath: '/Thessien_Mereldar.png'
+      imagePath: 'Thessien_Mereldar.png'
     }
   ];
 
@@ -96,7 +97,7 @@ const AboutSection: React.FC = () => {
               >
                 <div className="w-full h-full bg-lavastone rounded-lg flex items-center justify-center relative overflow-hidden">
                   <img 
-                    src="/Kommandantin.jpg" 
+                    src={bp + '/Kommandantin.jpg'} 
                     alt="Mereldar Glutspeer - Charakterportrait" 
                     className="w-full h-full object-cover rounded-lg"
                   />
@@ -241,7 +242,7 @@ const AboutSection: React.FC = () => {
                           viewport={{ once: true }}
                         >
                           <img 
-                            src={event.imagePath}
+                            src={bp + '/' + event.imagePath}
                             alt={`${event.title} - Alter ${event.age}`}
                             className="w-full max-w-xs mx-auto rounded-lg border border-ember shadow-lg"
                           />

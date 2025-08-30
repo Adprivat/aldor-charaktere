@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 import Parallax from './Parallax';
 
 export default function HeroSection() {
@@ -15,7 +16,7 @@ export default function HeroSection() {
         <Parallax distance={50}>
           <div className="w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full p-[3px] bg-gradient-to-br from-amber-400 via-red-600 to-amber-700 shadow-2xl shadow-red-900/50">
             <div className="w-full h-full rounded-full overflow-hidden ring-2 ring-amber-400/40 relative">
-              <Image src="/sarelan_portrait.png" alt="Sarelan Feuersturm" fill className="object-cover" />
+              <Image src={bp + '/sarelan_portrait.png'} alt="Sarelan Feuersturm" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#280a0a] via-transparent to-transparent opacity-40" />
             </div>
           </div>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Landmark, BookLock, Trees, Eye } from 'lucide-react';
 import Image from 'next/image';
+const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 import Parallax from './Parallax';
 
 const FULL_TEXT = `Einsam und zugleich erhaben erhebt sich Sarelan Feuersturms Anwesen im herbstlich getönten Waldland von Quel’Thalas, verborgen zwischen uralten Baumriesen, deren Blätter in feurigen Farben lodern wie das letzte Aufflammen eines Tages. Der Anblick des Anwesens wirkt, als sei es nicht erbaut, sondern aus der Essenz des Waldes selbst herausgewachsen – eine Symbiose aus Natur und elfischer Baukunst, von makelloser Harmonie und dennoch ehrfurchtgebietend in seiner Präsenz.
@@ -36,7 +37,7 @@ export default function EstateSection() {
           <Parallax distance={90} className="relative block">
             <div className="aspect-[16/7] w-full bg-[#2d0c0c]">
               <Image
-                src="/anwesen.png"
+                src={bp + '/anwesen.png'}
                 alt="Sarelans abgeschiedenes Anwesen im Wald von Quel'Thalas"
                 fill
                 priority={false}

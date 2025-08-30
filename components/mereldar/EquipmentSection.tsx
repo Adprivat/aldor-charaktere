@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 interface EquipmentItem {
   name: string;
@@ -145,7 +146,7 @@ const EquipmentSection: React.FC = () => {
                 {/* Render image if available, otherwise emoji */}
                 {item.image ? (
                   <img
-                    src={`/${item.image}`}
+                    src={`${bp}/${item.image}`}
                     alt={item.name}
                     className="w-full h-full object-contain rounded-lg"
                   />

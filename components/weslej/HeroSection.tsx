@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function HeroSection() {
   return (
@@ -30,7 +31,7 @@ export default function HeroSection() {
           <div className="w-44 h-44 md:w-52 md:h-52 mx-auto rounded-full p-[3px] bg-gradient-to-br from-flame-gold via-void-200 to-flame-400">
             <div className="w-full h-full rounded-full overflow-hidden bg-void-800">
               <img
-                src="/WeslejPortrait.png"
+                src={bp + '/WeslejPortrait.png'}
                 alt="Sir Weslej Eichbaum"
                 className="w-full h-full object-cover"
               />
