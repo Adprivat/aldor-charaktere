@@ -71,6 +71,9 @@ export default function SpellbookSection() {
     }
   ], []);
 
+  // Previously, a `dirRef` variable was used to track animation direction for page transitions.
+  // It was removed as animation direction is no longer needed for the current implementation.
+  // Only the `index` state is required to track the current page.
   const [index, setIndex] = useState(0);
 
   const next = useCallback(() => setIndex(i => (i + 1) % pages.length), [pages.length]);
