@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { User, Star, Shield, Zap, Clock, Book, Maximize2, Square } from 'lucide-react'
+import { User, Maximize2, Square } from 'lucide-react'
 import Image from 'next/image'
 import { asset } from '@/utils/asset';
 

@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
 import CharacterLayout from '../../../components/shared/CharacterLayout'
 import { getCharacterById } from '@/data/characters'
 

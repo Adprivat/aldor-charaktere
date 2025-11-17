@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          „Möge das Licht von Beledar stets euren Weg erleuchten."
+          &bdquo;Möge das Licht von Beledar stets euren Weg erleuchten.&ldquo;
         </motion.p>
         
         {/* Footer Symbols */}

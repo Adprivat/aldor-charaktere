@@ -134,7 +134,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1, delay: 1.1 }}
         >
           <p className="font-caslon text-xl italic text-flame-gold border-l-4 border-ember pl-6 inline-block">
-            „Solange ein Funke glimmt, wird die Flamme nicht vergehen."
+            &bdquo;Solange ein Funke glimmt, wird die Flamme nicht vergehen.&ldquo;
           </p>
         </motion.div>
         

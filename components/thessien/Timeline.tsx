@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Clock, MapPin, Star, Users, Sword, Crown } from 'lucide-react'
+import { Users, Crown } from 'lucide-react'
 import Image from 'next/image'
 
 const Timeline = () => {
@@ -221,7 +221,7 @@ const Timeline = () => {
         >
           <div className="inline-block p-8 bg-black/60 rounded-2xl border border-arcane-700">
             <h3 className="font-runic text-2xl magic-text mb-4">
-              "Zeit ist ein Fluss, und ich bin sowohl der Strom als auch der Steuermann."
+              &ldquo;Zeit ist ein Fluss, und ich bin sowohl der Strom als auch der Steuermann.&rdquo;
             </h3>
             <p className="text-gray-400 text-lg">
               - Thessien der Wanderer

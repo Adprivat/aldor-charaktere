@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Sparkles, Crown, Zap } from 'lucide-react'
+import { Sparkles, Zap } from 'lucide-react'
 import Image from 'next/image'
 import { asset } from '@/utils/asset'
 

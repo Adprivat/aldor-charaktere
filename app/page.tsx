@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Users, Sparkles, Sword, Crown } from 'lucide-react'
+import { Sparkles, Sword, Crown } from 'lucide-react'
 import { characters } from '@/data/characters'
 import { asset } from '@/utils/asset'
 

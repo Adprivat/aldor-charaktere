@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Users, Crown, Shield, Star, Zap, Heart, Sword, Skull, Clock } from 'lucide-react'
+import { Crown, Shield } from 'lucide-react'
 
 const Connections = () => {
   const connections = [
@@ -138,7 +138,7 @@ const Connections = () => {
         >
           <div className="inline-block p-8 bg-black/60 rounded-2xl border border-arcane-700">
             <h3 className="font-runic text-2xl magic-text mb-4">
-              "Macht ohne Verbündete ist nutzlos. Wissen ohne Austausch vergeht."
+              &ldquo;Macht ohne Verbündete ist nutzlos. Wissen ohne Austausch vergeht.&rdquo;
             </h3>
             <p className="text-gray-400">
               - Thessien über die Wichtigkeit von Allianzen

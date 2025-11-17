@@ -1,12 +1,12 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Search, Shield, Droplets, Layers, KeyRound, Copy, Cog, ScrollText, AlertTriangle } from 'lucide-react';
+import { Search, Shield, Droplets, Layers, Copy, Cog, ScrollText, AlertTriangle } from 'lucide-react';
 
 interface Block {
   id: string;
   title: string;
-  icon: any;
+  icon: React.ElementType;
   color: string; // tailwind text color
   lines: string[];
   detail?: string;
