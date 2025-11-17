@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useCallback, useMemo } from 'react';
-import { BookOpen, Flame, Sparkles, Orbit, Shield, ChevronLeft, ChevronRight, Zap, Timer, Rabbit } from 'lucide-react';
+import { Sparkles, Orbit, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface PageDef {
   id: string;
@@ -71,8 +71,10 @@ export default function SpellbookSection() {
     }
   ], []);
 
+  // Previously, a `dirRef` variable was used to track animation direction for page transitions.
+  // It was removed as animation direction is no longer needed for the current implementation.
+  // Only the `index` state is required to track the current page.
   const [index, setIndex] = useState(0);
-  const dirRef = useState<1 | -1>(1)[0];
 
   const next = useCallback(() => setIndex(i => (i + 1) % pages.length), [pages.length]);
   const prev = useCallback(() => setIndex(i => (i - 1 + pages.length) % pages.length), [pages.length]);

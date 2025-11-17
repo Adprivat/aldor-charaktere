@@ -6,7 +6,7 @@ interface Rune { left:number; top:number; delay:number; size:number }
 export default function RunesBackground() {
   const [runes,setRunes] = useState<Rune[]>([]);
   useEffect(()=>{
-    const list: Rune[] = Array.from({length:26}).map((_,i)=>({
+    const list: Rune[] = Array.from({length:26}).map(()=>({
       left: Math.random()*100,
       top: Math.random()*100,
       delay: Math.random()*8,

@@ -15,7 +15,10 @@ const MysticAudioPlayer: React.FC<AudioPlayerProps> = ({ className = "" }) => {
   useEffect(() => {
     // Initialize Web Audio API
     if (!audioContextRef.current) {
-      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioContextClass) {
+        audioContextRef.current = new AudioContextClass();
+      }
     }
 
     return () => {

@@ -207,7 +207,7 @@ const AlliesSection: React.FC = () => {
                 
                 {/* Quote Text */}
                 <blockquote className="font-caslon text-divine-light text-lg italic mb-4 pl-8">
-                  "{quote.text}"
+                  &ldquo;{quote.text}&rdquo;
                 </blockquote>
                 
                 {/* Context */}

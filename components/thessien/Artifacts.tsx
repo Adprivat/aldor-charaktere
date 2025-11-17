@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Scroll, Crown, Zap, Eye, Shield, Gem, Star, Clock } from 'lucide-react'
+import { Gem, Star } from 'lucide-react'
 
 const Artifacts = () => {
   const [selectedArtifact, setSelectedArtifact] = useState<number | null>(null)
@@ -14,7 +14,7 @@ const Artifacts = () => {
     rarity: string
     power: string
     origin: string
-    icon: any
+    icon: React.ElementType
     effects: string[]
     lore: string
   }> = [

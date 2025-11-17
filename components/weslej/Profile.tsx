@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Shield, Gavel, Swords, Church, Cross, Mountain } from 'lucide-react'
+import { Shield, Gavel, Swords, Church } from 'lucide-react'
 
 export default function Profile() {
   return (
