@@ -191,7 +191,7 @@ const HeroSection = () => {
             exit={{ opacity: 0, y: -20 }}
             className="font-arcane text-lg md:text-xl text-mystic-200 italic max-w-3xl mx-auto"
           >
-            "{quotes[currentQuote]}"
+            &ldquo;{quotes[currentQuote]}&rdquo;
           </motion.p>
         </motion.div>
 
