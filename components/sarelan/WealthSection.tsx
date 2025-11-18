@@ -21,7 +21,7 @@ export default function WealthSection() {
             <p className="text-amber-100/70 font-caslon leading-relaxed">Nur Eine besitzt neben Ihm vollen Zugriff – Ausdruck von Vertrauen und Vermächtnis. </p>
           </motion.div>
           <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7,delay:0.1}} className="grid sm:grid-cols-2 gap-6">
-            {assets.map((a,i)=> (
+            {assets.map((a)=> (
               <div key={a.label} className="rounded-lg p-5 bg-[#401414]/70 ring-1 ring-amber-500/20 shadow-md shadow-red-900/30 hover:ring-amber-400/40 transition">
                 <a.icon className="w-7 h-7 text-amber-400 mb-3" />
                 <h3 className="font-raleway font-semibold text-amber-200 mb-1">{a.label}</h3>

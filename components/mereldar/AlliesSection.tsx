@@ -23,7 +23,7 @@ const AlliesSection: React.FC = () => {
       faction: "Kirin Tor",
       icon: "🧙‍♂️",
       color: "crystal-blue",
-      image: 'thessien.jpg' // Bild aus dem public Ordner
+      image: '/images/thessien.jpg' // Bild aus dem public Ordner
     },
     {
       name: "Engracia Morgensinn",
@@ -142,7 +142,7 @@ const AlliesSection: React.FC = () => {
                 {ally.image ? (
                   <div className="w-20 h-20 mx-auto mb-2">
                     <img
-                      src={asset('/' + ally.image)}
+                      src={asset(ally.image)}
                       alt={ally.name}
                       className="w-full h-full object-cover rounded-full border-2 border-ember"
                     />

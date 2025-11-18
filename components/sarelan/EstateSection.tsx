@@ -50,7 +50,7 @@ export default function EstateSection() {
         </motion.div>
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <motion.div initial={{opacity:0,x:-50}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.6}} className="space-y-8">
-            {bullets.map((b,i)=> (
+            {bullets.map((b)=> (
               <div key={b.title} className="flex gap-4 group">
                 <div className="w-12 h-12 rounded-lg bg-[#401414]/70 flex items-center justify-center ring-1 ring-amber-500/30 group-hover:ring-amber-400/50 transition">
                   <b.icon className="w-6 h-6 text-amber-400" />

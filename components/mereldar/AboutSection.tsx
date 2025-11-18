@@ -16,7 +16,7 @@ const AboutSection: React.FC = () => {
       title: "Junge Erwachsene",
       description: "Geweiht in der heiligen Flamme. Der Drang nach Mehr erwacht und führt zum Dienst an der Waffe.",
       color: "ember",
-      imagePath: "Foliant.png"
+      imagePath: "/images/Foliant.png"
     },
     {
       age: "21-24",
@@ -37,28 +37,28 @@ const AboutSection: React.FC = () => {
       title: "Eine neue Heimat",
       description: "Nach dem Absturz in Heilsturz gestrandet. Aufbau der neuen Arathi-Siedlung unter Beledar.",
       color: "ember",
-      imagePath: 'Glutspeer28.jpg'
+      imagePath: '/images/Glutspeer28.jpg'
     },
     {
       age: "32",
       title: "Der Tag der Dunkelheit",
       description: "Beledar verschiebt sich in die Leere. Aufstieg zur Lampenanzünderin - geschaffen für den Kampf gegen die Dunkelheit.",
       color: "crystal-blue",
-      imagePath: 'Neruber.png'
+      imagePath: '/images/Neruber.png'
     },
     {
       age: "37",
       title: "Kommandantin",
       description: "Aufstieg zur Speerspitze von Arathis Speer. Führung der Einheit in den dunkelsten Stunden.",
       color: "flame-gold",
-      imagePath: 'Kommandantin.jpg'
+      imagePath: '/images/Kommandantin.jpg'
     },
     {
       age: "38",
       title: "Neue Bündnisse",
       description: "Freundschaften mit Fremden, besonders ein Band zu einem Kirin Tor Magier. Adoption der Tochter Tilda.",
       color: "mystic-gold",
-      imagePath: 'Thessien_Mereldar.png'
+      imagePath: '/images/Thessien_Mereldar.png'
     }
   ];
 
@@ -242,7 +242,7 @@ const AboutSection: React.FC = () => {
                           viewport={{ once: true }}
                         >
                           <img 
-                            src={asset('/' + event.imagePath)}
+                            src={asset(event.imagePath)}
                             alt={`${event.title} - Alter ${event.age}`}
                             className="w-full max-w-xs mx-auto rounded-lg border border-ember shadow-lg"
                           />
