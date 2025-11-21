@@ -110,71 +110,84 @@ export default function EstateRoomsSection() {
         </motion.div>
 
         {/* Room Sections */}
-        <div className="space-y-32">
-          {rooms.map((room, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <motion.div
-                key={room.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className={`grid md:grid-cols-2 gap-12 items-center ${!isEven ? 'md:grid-flow-dense' : ''}`}
-              >
-                {/* Image */}
-                <motion.div
-                  className={`relative ${!isEven ? 'md:col-start-2' : ''}`}
-                  initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.1 }}
-                >
-                  <Parallax distance={70}>
-                    <div className="relative rounded-xl overflow-hidden ring-2 ring-amber-500/30 shadow-2xl shadow-red-900/40">
-                      <div className="aspect-[4/3] relative">
-                        <Image
-                          src={asset(room.image)}
-                          alt={room.alt}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#280a0a]/60 via-transparent to-transparent" />
-                      </div>
-                    </div>
-                  </Parallax>
-                  {/* Decorative glow */}
-                  <div className={`absolute -z-10 ${isEven ? '-right-8 -bottom-8' : '-left-8 -bottom-8'} w-64 h-64 rounded-full bg-gradient-to-br from-amber-500/20 via-red-600/15 to-transparent blur-3xl`} />
-                </motion.div>
+        <AnimatePresence initial={false}>
+          {open && (
+            <motion.div
+              key="rooms-grid"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.6 }}
+              className="overflow-hidden"
+            >
+              <div className="space-y-32 mt-16">
+                {rooms.map((room, index) => {
+                  const isEven = index % 2 === 0;
+                  return (
+                    <motion.div
+                      key={room.id}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      className={`grid md:grid-cols-2 gap-12 items-center ${!isEven ? 'md:grid-flow-dense' : ''}`}
+                    >
+                      {/* Image */}
+                      <motion.div
+                        className={`relative ${!isEven ? 'md:col-start-2' : ''}`}
+                        initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: 0.1 }}
+                      >
+                        <Parallax distance={70}>
+                          <div className="relative rounded-xl overflow-hidden ring-2 ring-amber-500/30 shadow-2xl shadow-red-900/40">
+                            <div className="aspect-[4/3] relative">
+                              <Image
+                                src={asset(room.image)}
+                                alt={room.alt}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-[#280a0a]/60 via-transparent to-transparent" />
+                            </div>
+                          </div>
+                        </Parallax>
+                        {/* Decorative glow */}
+                        <div className={`absolute -z-10 ${isEven ? '-right-8 -bottom-8' : '-left-8 -bottom-8'} w-64 h-64 rounded-full bg-gradient-to-br from-amber-500/20 via-red-600/15 to-transparent blur-3xl`} />
+                      </motion.div>
 
-                {/* Text Content */}
-                <motion.div
-                  className={`space-y-6 ${!isEven ? 'md:col-start-1' : ''}`}
-                  initial={{ opacity: 0, x: isEven ? 50 : -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.2 }}
-                >
-                  <div>
-                    <h3 className="font-cinzel text-3xl text-amber-300 mb-4 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]">
-                      {room.title}
-                    </h3>
-                    <div className="h-1 w-24 bg-gradient-to-r from-amber-500 via-red-600 to-transparent rounded-full mb-6" />
-                  </div>
-                  
-                  <div className="space-y-4">
-                    {room.description.split('\n\n').map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-amber-100/75 font-caslon leading-relaxed">
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                </motion.div>
-              </motion.div>
-            );
-          })}
-        </div>
+                      {/* Text Content */}
+                      <motion.div
+                        className={`space-y-6 ${!isEven ? 'md:col-start-1' : ''}`}
+                        initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                      >
+                        <div>
+                          <h3 className="font-cinzel text-3xl text-amber-300 mb-4 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]">
+                            {room.title}
+                          </h3>
+                          <div className="h-1 w-24 bg-gradient-to-r from-amber-500 via-red-600 to-transparent rounded-full mb-6" />
+                        </div>
+
+                        <div className="space-y-4">
+                          {room.description.split('\n\n').map((paragraph, pIndex) => (
+                            <p key={pIndex} className="text-amber-100/75 font-caslon leading-relaxed">
+                              {paragraph}
+                            </p>
+                          ))}
+                        </div>
+                      </motion.div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
