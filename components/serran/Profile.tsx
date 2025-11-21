@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { Eye, Feather, Book, Gem, Shirt, Package } from 'lucide-react'
+import Link from 'next/link'
+import { Eye, Feather, Book, Gem, Shirt, Package, Heart } from 'lucide-react'
 import MagicBentoEnhancer from '../shared/magicBento/MagicBentoEnhancer'
 
 export default function Profile() {
@@ -62,6 +63,26 @@ export default function Profile() {
             </p>
           </div>
         </div>
+        
+        {/* Wedding Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-8 text-center"
+        >
+          <Link href="/charaktere/hochzeit-feuersturm">
+            <motion.button
+              className="flex items-center gap-2 px-6 py-3 mx-auto bg-gradient-to-r from-rose-900/40 to-red-900/40 hover:from-rose-800/50 hover:to-red-800/50 border border-rose-400/40 rounded-lg backdrop-blur-sm transition-all duration-300 shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Heart className="w-5 h-5 text-rose-300" />
+              <span className="text-rose-300 font-medium">Die Hochzeit auf dem Anwesen Feuersturm</span>
+            </motion.button>
+          </Link>
+        </motion.div>
         <MagicBentoEnhancer sectionSelector="#profile" />
       </div>
     </section>
