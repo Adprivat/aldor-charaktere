@@ -88,7 +88,7 @@ export default function EstateRoomsSection() {
           <div className="mt-8">
             <button onClick={()=>setOpen(o=>!o)} className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-gradient-to-r from-red-700 via-amber-600 to-red-700 text-[#1a0808] font-raleway font-semibold shadow shadow-red-900/40 hover:shadow-red-700/60 transition">
               {open ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-              {open ? 'Ausführliche Beschreibung ausblenden' : 'Ausführliche Beschreibung anzeigen'}
+              {open ? 'Vollständige Beschreibung ausblenden' : 'Vollständige Beschreibung anzeigen'}
             </button>
           </div>
           <AnimatePresence initial={false}>
