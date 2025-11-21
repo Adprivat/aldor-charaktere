@@ -289,6 +289,21 @@ Alle Charaktere sind Eigentum ihrer jeweiligen Spieler.
 
 ## 🔍 Häufige Fragen & Troubleshooting
 
+### Build schlägt fehl mit EPERM Error (Windows)?
+Falls der Build auf Windows mit einem `EPERM: operation not permitted, open '.next\trace'` Fehler abbricht:
+- **Lösung 1:** Das Projekt wurde bereits mit einem automatischen Pre-Build-Script ausgestattet, das die `.next` Verzeichnis vor jedem Build aufräumt
+- **Lösung 2:** Telemetry wurde projekt-weit deaktiviert (via `.npmrc`)
+- **Manuelle Lösung:** Falls der Fehler weiterhin auftritt:
+  ```powershell
+  # .next Verzeichnis manuell löschen
+  Remove-Item -Recurse -Force .next
+  
+  # Dann Build erneut ausführen
+  npm run build
+  ```
+- **Ursache:** Windows-Dateisperre kann mit Next.js Telemetry-Trace-Dateien kollidieren
+- **Alternative:** Antivirus-Software temporär deaktivieren oder `.next` Ordner von Echtzeitscans ausschließen
+
 ### Build schlägt fehl wegen Google Fonts?
 Falls der Build mit Fehlern zu Google Fonts abbricht (z.B. in Umgebungen mit eingeschränktem Internetzugang):
 - Die Fonts sind als Fallback im `<head>` als CDN-Link eingebunden
